@@ -1,1 +1,0 @@
-# VR-3D-Nadya-Putri-Andini
