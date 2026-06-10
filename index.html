@@ -3,61 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Model Viewer - GitHub Pages</title>
+    <title>3D Model Viewer</title>
     
+    <!-- Import script model-viewer dari Google -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
     <style>
-        body {
+        /* Menghilangkan margin bawaan browser dan membuat background pas satu layar penuh */
+        html, body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        /* Styling untuk container dan model 3D */
-        .container {
-            width: 90%;
-            max-width: 800px;
-            height: 500px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            background-color: #f0f2f5; /* Warna background di luar model jika diperlukan */
         }
 
+        /* Mengatur agar komponen 3D memenuhi seluruh layar browser */
         model-viewer {
             width: 100%;
             height: 100%;
-            background-color: #dedede;
+            display: block;
+            --poster-color: transparent; /* Menghilangkan warna background saat loading */
         }
     </style>
 </head>
 <body>
 
-    <h1>Koleksi Model 3D Saya</h1>
-
-    <div class="container">
-        <model-viewer 
-            src="spongebob_squarepants.glb" 
-            ar 
-            ar-modes="webxr scene-viewer quick-look" 
-            camera-controls 
-            poster="poster.webp" 
-            shadow-intensity="1" 
-            auto-rotate>
-        </model-viewer>
-    </div>
+    <!-- Komponen 3D langsung ditaruh tanpa teks judul dan box container -->
+    <model-viewer 
+        src="spongebob_squarepants.glb" 
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        shadow-intensity="1" 
+        auto-rotate>
+    </model-viewer>
 
 </body>
 </html>
